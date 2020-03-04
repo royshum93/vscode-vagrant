@@ -1,0 +1,15 @@
+[Unit]
+Description=VSCode on the web (code-server)
+After=network.target
+
+[Service]
+User=vagrant
+Group=vagrant
+
+WorkingDirectory=/vagrant/code
+ExecStart=/usr/bin/code-server --auth password --host 0.0.0.0 --port 8443 --disable-telemetry --cert /home/vagrant/.local/share/mkcert/my.dev.pem --cert-key /home/vagrant/.local/share/mkcert/my.dev-key.pem
+Restart=always
+RestartSec=3
+
+[Install]
+WantedBy=multi-user.target

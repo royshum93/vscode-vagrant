@@ -1,0 +1,33 @@
+{
+    "go.gopath": "/go",
+    "go.goroot": "/home/vagrant/.gvm/gos/go1.14",
+    "go.testFlags": ["-tags", "unit integration"],
+    "go.lintTool":"golangci-lint",
+    "go.lintFlags": [
+    "--fast"
+    ],
+    "go.delveConfig": {
+        "apiVersion": 2
+    },
+    "terminal.integrated.shellArgs.linux": [
+        "-l"
+    ],
+    "files.autoSave": "off",
+    "search.useIgnoreFiles": false,
+    "go.useLanguageServer": false,
+    "go.alternateTools": {
+        "go-langserver": "gopls"
+    },
+    "gopls": {
+        "usePlaceholders": true
+    },
+    "files.eol": "\n",
+    "go.installDependenciesWhenBuilding": false, // formatting only supports LF line endings,
+    "files.watcherExclude": {
+        "**/.git/objects/**": true,
+        "**/.git/subtree-cache/**": true,
+        "**/node_modules/*/**": true,
+        "**/vendor/*/**": true
+    },
+    "workbench.colorTheme": "Visual Studio Dark"
+}
