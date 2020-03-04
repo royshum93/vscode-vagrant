@@ -109,6 +109,7 @@ sudo systemctl start vscode.service
 sudo systemctl status vscode.service | grep Password
 (sudo crontab -l 2>/dev/null; echo "0 */3 * * * service vscode restart") | sudo crontab -
 sudo service nginx restart
+SCRIPT
 
 $BOOT = <<SCRIPT
 sleep 5
