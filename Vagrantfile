@@ -3,11 +3,11 @@
 
 Vagrant.configure(2) do |config|
   config.vm.box = "bento/ubuntu-18.04"
-  config.vm.provision "file", source: ".bash_profile", destination: ".bash_profile"
+  config.vm.provision "file", source: "./.bash_profile", destination: ".bash_profile"
   config.vm.provision "file", source: "~/.gitconfig", destination: ".gitconfig"
-  config.vm.provision "file", source: "vscode.service", destination: "~/vscode.service"
-  config.vm.provision "file", source: "nginx/default", destination: "~/default"
-  config.vm.provision "file", source: "settings.json", destination: "~/.local/share/code-server/User/settings.json"
+  config.vm.provision "file", source: "./vscode.service", destination: "~/vscode.service"
+  config.vm.provision "file", source: "./nginx/default", destination: "~/default"
+  config.vm.provision "file", source: "./settings.json", destination: "~/.local/share/code-server/User/settings.json"
   if ENV['MKCERT_PATH'].respond_to?("concat")
     config.vm.provision "file", source: ENV['MKCERT_PATH']+"/rootCA.pem", destination: "~/.local/share/mkcert/rootCA.pem"
     config.vm.provision "file", source: ENV['MKCERT_PATH']+"/rootCA-key.pem", destination: "~/.local/share/mkcert/rootCA-key.pem"
