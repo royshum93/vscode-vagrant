@@ -38,12 +38,7 @@ sudo systemctl disable systemd-networkd-wait-online.service
 sudo systemctl mask systemd-networkd-wait-online.service
 git config --global gpg.program gpg
 git config --global core.editor vim
-sudo sed -i '977s/^.//' /etc/squid/squid.conf
-sudo sed -i '1190s/^.//' /etc/squid/squid.conf
-sudo echo "acl vmhost src 172.28.128.1/32" >> /etc/squid/squid.conf
-sudo echo "acl vmhostext src 10.0.2.2/32" >> /etc/squid/squid.conf
-sudo echo "http_access allow vmhost" >> /etc/squid/squid.conf
-sudo echo "http_access allow vmhostext" >> /etc/squid/squid.conf
+sudo sed -i '/# INSERT YOUR OWN RULE(S) HERE TO ALLOW ACCESS FROM YOUR CLIENTS/a acl vmhost src 172.28.128.1\/32\nacl vmhostext src 10.0.2.2/32\nhttp_access allow vmhost vmhostext' /etc/squid/squid.conf
 sudo service squid restart
 
 sudo dos2unix ~/.bash_profile ~/.gitconfig ~/.ssh/id_rsa.pub ~/.ssh/id_rsa

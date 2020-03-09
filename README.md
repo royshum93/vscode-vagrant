@@ -15,5 +15,4 @@ Notes
 - Defaults to 6GB of RAM, and 4 CPU cores.
 - Install `vagrant-vbguest` for ensuring the guest addition version is same as the Virtualbox host version to avoid folder mount issue.
 - Go 1.14, php and node is installed.
-- OpenVPN, Squid, GVM and NVM is installed. 
-- Squid will proxy for VM host and localnet (`192.168.0.0/24`)
+- OpenVPN, Squid, GVM and NVM is installed.
