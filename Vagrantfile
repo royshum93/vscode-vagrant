@@ -38,6 +38,8 @@ sudo systemctl disable systemd-networkd-wait-online.service
 sudo systemctl mask systemd-networkd-wait-online.service
 git config --global gpg.program gpg
 git config --global core.editor vim
+sudo sed -i '977s/^.//' /etc/squid/squid.conf
+sudo sed -i '1190s/^.//' /etc/squid/squid.conf
 sudo echo "acl vmhost src 172.28.128.1/32" >> /etc/squid/squid.conf
 sudo echo "acl vmhostext src 10.0.2.2/32" >> /etc/squid/squid.conf
 sudo echo "http_access allow vmhost" >> /etc/squid/squid.conf
